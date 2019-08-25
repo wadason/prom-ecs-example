@@ -1,0 +1,9 @@
+version: 1
+task_definition:
+  services:
+    prometheus:
+      cpu_shares: 100
+      mem_limit: 268435456
+    grafana:
+      cpu_shares: 100
+      mem_limit: 268435456

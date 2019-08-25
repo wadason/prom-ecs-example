@@ -1,12 +1,25 @@
-version: '2'
+version: '3'
 services:
   prometheus:
     image: prom/prometheus
-    volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    # volumes:
+    #   - ./prometheus.yml:/etc/prometheus/prometheus.yml
     ports:
+      - "80:80"
       - '9090:9090'
+    logging:
+      driver: awslogs
+      options: 
+        awslogs-group: develop
+        awslogs-region: ap-northeast-1
+        awslogs-stream-prefix: develop
   grafana:
     image: grafana/grafana
     ports:
       - "3000:3000"
+    logging:
+      driver: awslogs
+      options: 
+        awslogs-group: develop
+        awslogs-region: ap-northeast-1
+        awslogs-stream-prefix: develop
