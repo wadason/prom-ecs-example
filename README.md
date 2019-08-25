@@ -1,5 +1,16 @@
 # prometheus on ecs
 
+## Design
+
+```
+├── docker-compose.dev.yml // develop
+├── docker-compose.yml     // prod (ECS)
+├── ecs-cli.asc            // ecs-cli
+├── ecs-params.yml         // prod (ECS)
+└── prometheus.yml         // your prometheus setting
+```
+
+
 ## How to build on local
 
 ```bash
